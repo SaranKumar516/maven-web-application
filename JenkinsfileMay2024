@@ -8,7 +8,7 @@ echo "Build Number is: ${env.BUILD_NUMBER}"
     
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
     
-    def mavenHome = tool name: 'maven3.9.8'
+    def mavenHome = tool name: 'Maven 3.9.8'
 
 stage('CheckOutCode'){
 git branch: 'development', credentialsId: 'f52a7301-4cbc-4389-91fd-0e6ef69c493d', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
